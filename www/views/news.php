@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1><?php echo $item['title'] ?></h1>
+<span><?php echo $item['data'] ?></span>
 <p><?php echo $item['text'] ?></p>
 <a href="../../">На главную</a>
 </body>
