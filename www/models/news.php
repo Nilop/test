@@ -17,3 +17,9 @@ function news_get_current($id)
     $res = $res[0];
     return $res;
 }
+
+function news_insert($data)
+{
+    $sql = "INSERT INTO news (title, text, data) VALUES ('" . $data['title'] . "', '" . $data['text'] . "', '" . $data['data'] . "')";
+    sql_exec($sql);
+}

@@ -13,5 +13,6 @@
     </li>
     <?php endforeach; ?>
 </ul>
+<a href="/controller/form.php">Добавить новость</a>
 </body>
 </html>
