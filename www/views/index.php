@@ -7,10 +7,9 @@
 <body>
 <h1>Новости нашего уголка</h1>
 <ul>
-    <?php foreach ($items as $link => $item): ?>
+    <?php foreach ($items as $item): // Ключ массива, он же идентификатор новости, используется как ссылка на конкретную новость ?>
     <li>
-        <h3><a href="/controller/news.php?newsid=<?php echo $link; ?>"><?php echo $item['title'] ?></a></h3>
-        <p><?php echo $item['text'] ?></p>
+        <h3><a href="/controller/news.php?newsid=<?php echo $item['id']; ?>"><?php echo $item['title'] ?></a></h3>
     </li>
     <?php endforeach; ?>
 </ul>
