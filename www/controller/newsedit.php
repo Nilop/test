@@ -1,0 +1,26 @@
+<?php
+
+require __DIR__.'/../models/news.php';
+
+if (!empty($_POST))
+{
+    $data = [];
+    if ((!empty($_POST['title'])) and (!empty($_POST['text'])))
+    {
+        $data['title'] = $_POST['title'];
+        $data['text'] = $_POST['text'];
+        $data['data'] = date('Y-m-d H:i:s');
+        $data['id']= $_GET[newsid];
+    }
+    if (isset($data['title']) && isset($data['text']) && isset($data['data'])) {
+        $model->news_edit($data);
+        header('Location: /index.php');
+        die;
+    }
+}
+
+if (isset($_GET)) {
+    $id = $_GET[newsid];
+}
+$item = $model->news_get_current($id); // ѕолучение массива с конкретной новостью
+require __DIR__.'/../views/newsedit.php';
