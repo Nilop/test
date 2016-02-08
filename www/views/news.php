@@ -2,12 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title><?php echo $item['title'] ?></title>
+    <title><?php echo $CurrentNews->title ?></title>
 </head>
 <body>
-<h1><?php echo $item['title'] ?></h1>
-<span><?php echo $item['data'] ?></span>
-<p><?php echo $item['text'] ?></p>
+<?php $CurrentNews->PrintNews() ?>
 <a href="../../">На главную</a>
+<a href="../controller/newsedit.php?newsid=<?php echo $CurrentNews->id; ?>">Редактировать новость</a>
 </body>
 </html>

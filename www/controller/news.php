@@ -1,10 +1,13 @@
 <?php
 
 require __DIR__.'/../models/news.php';
+require __DIR__.'/../Lib/News.php';
 
 if (isset($_GET)) {
     $id = $_GET[newsid];
 }
-$item = news_get_current($id); // Получение массива с конкретной новостью
+$item = $model->news_get_current($id); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+
+$CurrentNews = new NewsArticle($item);
 
 require __DIR__.'/../views/news.php';

@@ -12,7 +12,7 @@ if (!empty($_POST))
         $data['data'] = date('Y-m-d H:i:s');
     }
     if (isset($data['title']) && isset($data['text']) && isset($data['data'])) {
-        news_insert($data);
+        $model->news_insert($data);
         header('Location: /index.php');
         die;
     }
